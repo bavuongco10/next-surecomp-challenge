@@ -11,7 +11,7 @@ function Home() {
 
   const [loginData, setLoginData] = useState(null);
   const [stories, setStories] = useState(null);
-  const [feed] = useState(null);
+  const [feed, setFeed] = useState(null);
 
   const updateLoginUser = (data) => {
     setLoginUser(data);
@@ -25,9 +25,9 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    fetch('/api/loginUser')
+    fetch('/api/feed')
       .then((response) => response.json())
-      .then((data) => updateLoginUser(data));
+      .then((data) => setFeed(data));
   }, []);
 
   useEffect(() => {
