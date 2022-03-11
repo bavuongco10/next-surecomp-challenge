@@ -1,18 +1,18 @@
 export const data = {
   loginUser: {
-    username: "anilsenay",
-    name: "Anıl Şenay",
+    username: "Pasmana",
+    name: "Pasmana",
     image:
       "https://i.ibb.co/p3n8jKV/88129994-218553312873090-187843388282765312-n.jpg",
   },
   feed: [
     {
       photos: [
+        "https://picsum.photos/id/287/600/600",
+        "https://picsum.photos/id/267/600/600",
         "https://picsum.photos/id/213/600/600",
         "https://picsum.photos/id/247/600/600",
         "https://picsum.photos/id/257/600/600",
-        "https://picsum.photos/id/287/600/600",
-        "https://picsum.photos/id/267/600/600",
       ],
       user: {
         username: "testuser",
