@@ -1,5 +1,5 @@
-import React from "react";
-import Router from "next/router";
+import React from 'react';
+import Router from 'next/router';
 
 export default function ProfilePic({
   src,
@@ -10,7 +10,7 @@ export default function ProfilePic({
   ...props
 }) {
   return (
-    <span {...props} onClick={() => Router.push("/[pid]", `/${username}`)}>
+    <span {...props} onClick={() => Router.push('/[pid]', `/${username}`)}>
       <img
         alt={`${username}'s profile pic`}
         data-testid="user-avatar"
@@ -20,10 +20,10 @@ export default function ProfilePic({
           width: size,
           height: size,
           borderRadius: size,
-          border: border && "2px solid white",
-          cursor: "pointer",
+          border: border && '2px solid white',
+          cursor: 'pointer',
         }}
-      ></img>
+      />
     </span>
   );
 }

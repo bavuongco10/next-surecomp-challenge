@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 
-export default function AddComment() {
+function AddComment() {
   const changeRef = useRef(null);
   const [textAreaSize, setAreaSize] = useState(18);
   const [isTyped, setTyped] = useState(false);
@@ -17,13 +17,13 @@ export default function AddComment() {
           setAreaSize(changeRef.current.scrollHeight);
           setTyped(e.target.value.length > 0);
         }}
-      ></textarea>
+      />
       <button
         className="add-comment-button text-14-light text-blue"
-        style={{ opacity: isTyped ? 1 : 0.3 }}
-      >
+        style={{ opacity: isTyped ? 1 : 0.3 }}>
         Share
       </button>
     </form>
   );
 }
+export default AddComment;

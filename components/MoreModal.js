@@ -1,7 +1,9 @@
-import React from "react";
-import Modal from "./Modal";
-import useModalState from "hooks/useModalState";
-import Router from "next/router";
+import React from 'react';
+import Router from 'next/router';
+
+import Modal from './Modal';
+
+import useModalState from 'hooks/useModalState';
 
 export default function MoreModalItems() {
   const { modalData } = useModalState();
@@ -10,8 +12,7 @@ export default function MoreModalItems() {
     <Modal>
       <button
         className="modal-box-item h-12 bg-white w-full text-14-bold text-red"
-        onClick={() => console.log("test")}
-      >
+        onClick={() => console.log('test')}>
         Report Inappropriate
       </button>
       <button className="modal-box-item h-12 bg-white w-full text-14-bold text-red">
@@ -19,8 +20,7 @@ export default function MoreModalItems() {
       </button>
       <button
         className="modal-box-item h-12 bg-white w-full text-14-light"
-        onClick={() => Router.push("/post/[pid]", `/post/${data.pid}`)}
-      >
+        onClick={() => Router.push('/post/[pid]', `/post/${data.pid}`)}>
         Go to Post
       </button>
       <button className="modal-box-item h-12 bg-white w-full text-14-light">

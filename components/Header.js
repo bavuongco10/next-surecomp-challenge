@@ -1,50 +1,50 @@
-import React, { useLayoutEffect } from "react";
-import { useRouter } from "next/router";
+import React from 'react';
+import { useRouter } from 'next/router';
 
-import SearchBar from "./SearchBar";
-import HomeIcon from "./icons/home_icon";
-import DmIcon from "./icons/dm_icon";
-import ExploreIcon from "./icons/explore_icon";
-import ActivityIcon from "./icons/activity_icon";
-import HomeIconActive from "./icons/home_icon_active";
-import DmIconActive from "./icons/dm_icon_active";
-import ExploreIconActive from "./icons/explore_icon_active";
-import ActivityIconActive from "./icons/activity_icon_active";
-import ProfilePic from "./ProfilePic";
-import Clickable from "./Clickable";
+import SearchBar from './SearchBar';
+import HomeIcon from './icons/home_icon';
+import DmIcon from './icons/dm_icon';
+import ExploreIcon from './icons/explore_icon';
+import ActivityIcon from './icons/activity_icon';
+import HomeIconActive from './icons/home_icon_active';
+import DmIconActive from './icons/dm_icon_active';
+import ExploreIconActive from './icons/explore_icon_active';
+import ActivityIconActive from './icons/activity_icon_active';
+import ProfilePic from './ProfilePic';
+import Clickable from './Clickable';
 
-import useUser from "hooks/useUser";
+import useUser from 'hooks/useUser';
 
 export default function Header({ user }) {
   const router = useRouter();
 
   // set icons
   const home =
-    router.pathname === "/" ? (
+    router.pathname === '/' ? (
       <HomeIconActive className="header-icon" />
     ) : (
       <HomeIcon className="header-icon" />
     );
   const messages =
-    router.pathname === "/messages" ? (
+    router.pathname === '/messages' ? (
       <DmIconActive className="header-icon" />
     ) : (
       <DmIcon className="header-icon" />
     );
   const explore =
-    router.pathname === "/explore" ? (
+    router.pathname === '/explore' ? (
       <ExploreIconActive className="header-icon" />
     ) : (
       <ExploreIcon className="header-icon" />
     );
   const activity =
-    router.pathname === "/activity" ? (
+    router.pathname === '/activity' ? (
       <ActivityIconActive className="header-icon" />
     ) : (
       <ActivityIcon className="header-icon" />
     );
 
-  const { data, setLoginUser } = useUser();
+  const { data } = useUser();
   const loginUserData = data;
 
   return (
@@ -63,14 +63,14 @@ export default function Header({ user }) {
             <ProfilePic
               className={
                 loginUserData.username === user
-                  ? "header-profile-pic-border"
-                  : ""
+                  ? 'header-profile-pic-border'
+                  : ''
               }
               src={loginUserData?.image}
               username={loginUserData?.username}
               style={{
-                padding: loginUserData.username === user ? "2px" : "3px",
-                marginLeft: "-2px",
+                padding: loginUserData.username === user ? '2px' : '3px',
+                marginLeft: '-2px',
               }}
               size={22}
             />

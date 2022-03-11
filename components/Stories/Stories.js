@@ -1,12 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
-import StoryItem from "./StoryItem";
-import Box from "../Box";
-import ArrowButton from "../ArrowButton";
+import React, { useState, useRef, useEffect } from 'react';
+
+import Box from '../Box';
+import ArrowButton from '../ArrowButton';
+
+import StoryItem from './StoryItem';
 
 export default function Stories({ stories }) {
   const [x, setX] = useState(0);
   const [maxItems, setMaxItems] = useState(7);
-  const [min_X, setMinX] = useState(0);
+  const [minX, setMinX] = useState(0);
 
   const windowRef = useRef(null);
 
@@ -21,7 +23,7 @@ export default function Stories({ stories }) {
   });
 
   const calculateTransform = (newX) => {
-    if (newX < min_X) setX(min_X);
+    if (newX < minX) setX(minX);
     else if (newX > 0) setX(0);
     else setX(newX);
   };
@@ -30,8 +32,7 @@ export default function Stories({ stories }) {
     <Box className="stories-container sm:full-width" border>
       <div
         className="stories-feed overflow-y-hidden py-4 px-2 flex relative items-center"
-        ref={windowRef}
-      >
+        ref={windowRef}>
         {x !== 0 && (
           <ArrowButton
             place="left"
@@ -41,14 +42,13 @@ export default function Stories({ stories }) {
         )}
         <div
           className="stories-feed-floating flex relative transition ease-linear duration-300"
-          style={{ transform: `translate(${x}px, 0px)` }}
-        >
+          style={{ transform: `translate(${x}px, 0px)` }}>
           {stories &&
-            stories.map((item) => {
-              return <StoryItem data={item} key={item.username} />;
-            })}
+            stories.map((item) => (
+              <StoryItem data={item} key={item.username} />
+            ))}
         </div>
-        {x !== min_X && stories?.length > maxItems && (
+        {x !== minX && stories?.length > maxItems && (
           <ArrowButton
             place="right"
             text=">"

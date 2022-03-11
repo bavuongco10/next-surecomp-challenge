@@ -1,9 +1,10 @@
-import React from "react";
-import ActivityIcon from "../icons/activity_icon";
-import CommentIcon from "../icons/comment_icon";
-import DmIcon from "../icons/dm_icon";
-import SaveIcon from "../icons/save_icon";
-import Clickable from "../Clickable";
+import React from 'react';
+
+import ActivityIcon from '../icons/activity_icon';
+import CommentIcon from '../icons/comment_icon';
+import DmIcon from '../icons/dm_icon';
+import SaveIcon from '../icons/save_icon';
+import Clickable from '../Clickable';
 
 export default function FeedItemButtons({ ...props }) {
   return (

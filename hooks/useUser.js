@@ -1,6 +1,6 @@
-import { loginUser } from "atoms/userState";
+import { useRecoilState } from 'recoil';
 
-import { useRecoilState } from "recoil";
+import { loginUser } from 'atoms/userState';
 
 const useUser = () => {
   const [loginUserData, setLoginUserData] = useRecoilState(loginUser);

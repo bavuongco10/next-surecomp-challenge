@@ -1,16 +1,11 @@
-import "styles/index.css";
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from "recoil";
+import 'styles/index.css';
+import { RecoilRoot } from 'recoil';
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
     <RecoilRoot>
       <Component {...pageProps} />
     </RecoilRoot>
   );
 }
+export default MyApp;
